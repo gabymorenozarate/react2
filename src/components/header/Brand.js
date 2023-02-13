@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Brand = () => {
     return(
         <Link to="/">
-            <img src={brand} alt="Todo PC" title="Todo Pc"></img>
+            <img src={brand} alt="Tienda Hard" title="Tienda Hard"></img>
         </Link>
     )
 }

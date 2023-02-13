@@ -51,7 +51,7 @@
 }
 
 .cardDescription .precio{
-    color: #00fbc5;
+    color: #5b00fb;
     font-size: 40px;
     font-weight: bold;
     margin: 6px 0;
@@ -70,17 +70,17 @@
     height: 55px;
     width: 75%;
     border-radius: 50px;
-    background-color: #00fbc5;
+    background-color: #5b00fb;
     color: white;
     font-size: 20px;
     border: none;
 }
 .buttons #detalles:hover{
-    background-color: #00fbc5;
+    background-color: #4c00d1;
 }
 
 .buttons #addCart{
-    background-color: #00fbc5;
+    background-color: #5b00fb;
     height: 55px;
     width: 55px;
     border-radius: 50%;
@@ -95,7 +95,7 @@
 }
 
 .buttons #detalleshover, .buttons #addCart:hover{
-    background-color: #00fbc5;
+    background-color: #4c00d1;
 }
 
 

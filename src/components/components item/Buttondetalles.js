@@ -1,7 +1,10 @@
 
 const ButtonDetalles = (props) => {
     return(
-        <button id="detalles">{props.txt}</button>
+        <button 
+            id="detalles" 
+            style={{ width: "180%"}}
+        >{props.txt}</button>
     )
 }
 

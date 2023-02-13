@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 const ItemListContainer = (props) => {
     return(
-        <ul>
-            <li>
+        <ul >
+            <li style={{ color: "white"}}>
                 <Link to="category/procesador"> 
                     {props.itemUno} 
                 </Link>
