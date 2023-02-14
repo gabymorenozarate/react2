@@ -1,4 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import {getFirestore, gFetch } from "firebase/firestore";
+
+useEffect(() =>{
+    const db= getFirestore()
+
+} , [])
 
 const ItemListContainer = (props) => {
     return(
