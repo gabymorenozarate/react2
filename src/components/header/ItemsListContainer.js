@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import {getFirestore, gFetch } from "firebase/firestore";
-
-useEffect(() =>{
-    const db= getFirestore()
-
-} , [])
-
+import fetchSimultion from "../../utils/fetchSimulation";
 const ItemListContainer = (props) => {
     return(
         <ul >

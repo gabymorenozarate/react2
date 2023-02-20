@@ -4,8 +4,7 @@ import "../../styles/detailsItem.css";
 import ButtonDetalles from "./Buttondetalles";
 import fetchSimultion from "../../utils/fetchSimulation";
 import productos from "../../utils/products";
-import { useParams } from "react-router-dom";
-import {gFetch } from "firebase/firestore";  
+import { useParams } from "react-router-dom";  
 import { useState, useEffect } from "react";
 import MoonLoader from "react-spinners/ClipLoader";
 
@@ -22,14 +21,6 @@ const DetailsItem = () => {
         .catch(error => console.log(error))
     }, [idItem])
 
-    useEffect (() => {
-        const db = getFirestore()
-        const queryDoc = doc(db, 'items', DetailsItem)
-        getDoc(queryDoc)
-        .then(results => setProducto( { id : results.id, ...results.data() } ))
-        .catch(err => console.error(err))
-    }, [])
-    
     return(
         <div className="detailsItem">
             {

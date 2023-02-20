@@ -5,10 +5,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DetailsItem from './components/components item/DetailsItem';
 import { createContext, useState } from 'react';
 import ProviderContextoListCart from './components/components item/providerContextoListCart';
+import { app } from './utils/firebase';
 
 
 function App() {
-
+console.log(app);
   return (
     <ProviderContextoListCart>
       <BrowserRouter>

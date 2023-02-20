@@ -1,22 +1,52 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "firebase/app";
+//sdk de firebase
+import { getDocs, getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDYPG8_zjqL9cntUGhS1iEDwBzTpBDtD0M",
-  authDomain: "reactstorefinal.firebaseapp.com",
-  projectId: "reactstorefinal",
-  storageBucket: "reactstorefinal.appspot.com",
-  messagingSenderId: "754336082948",
-  appId: "1:754336082948:web:57a8746efb47b95a839951",
-  measurementId: "G-8FBM40JRV2"
+  apiKey: "AIzaSyBigkqLjUzU_GnS13PUVDnNM_vrmOYxDA4",
+  authDomain: "reactfinal-e58a3.firebaseapp.com",
+  projectId: "reactfinal-e58a3",
+  storageBucket: "reactfinal-e58a3.appspot.com",
+  messagingSenderId: "732243731394",
+  appId: "1:732243731394:web:de222a636ebad9e2a02c5b"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const initFirebase = () => app
+
+ const app = initializeApp(firebaseConfig);
+ const db = getFirestore(app)
+
+ //funcion que retorna todos los items de la coleccion "productos"
+ export async function fetchSimulation(){
+    // Crear referencia a la coleccion
+    const productsCollectionRef = collection(db, "productos")
+ 
+ 
+ /*getDocs(productsCollectionRef).then ((snapshot) =>{
+    const docsData = snapshot.docs.map((doc) => doc.data());
+    console.log(docsData) ; 
+ }); */
+
+// pedirle a firebase los documentos de esa coleccion
+ const snapshot = await getDocs(productsCollectionRef);
+
+ const docsData = snapshot.docs.map((doc) => {
+
+  return {...doc.data(), id: doc.id}
+ });
+ return docsData;
+}
+
+
+//funcion que retorna un documento segun su ID
+export async function getSingleItem(itemid) {
+
+    const productsCollectionRef = collection(db, "products");
+
+    const productsRef = doc(productsCollectionRef, itemid);
+
+    const snapshot = await getDoc(productoRef);
+
+    return {...snapshot.data(), id: snapshot.id};
+}
+
