@@ -27,6 +27,7 @@ console.log(App);
   );
 }
 
-console.log(fetchSimulation)
+//console.log(fetchSimulation)
+fetchSimulation().then(res=>console.log(res))
 
 export default App;
