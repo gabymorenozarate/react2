@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 //sdk de firebase
-import { getDocs, getFirestore } from "firebase/firestore";
+import { getDocs, getFirestore, collection, doc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBigkqLjUzU_GnS13PUVDnNM_vrmOYxDA4",
@@ -45,7 +45,7 @@ export async function getSingleItem(itemid) {
 
     const productsRef = doc(productsCollectionRef, itemid);
 
-    const snapshot = await getDoc(productoRef);
+    const snapshot = await getDocs(productsRef);
 
     return {...snapshot.data(), id: snapshot.id};
 }

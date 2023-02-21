@@ -1,4 +1,4 @@
-const fetchSimultion = (dataBase, time) => {
+const fetchSimulation = (dataBase, time) => {
     return new Promise((resolve, rejact) => {
         setTimeout(() => {
             resolve(dataBase);
@@ -7,4 +7,4 @@ const fetchSimultion = (dataBase, time) => {
     })
 }
 
-export default fetchSimultion;
+export default fetchSimulation;
